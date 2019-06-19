@@ -1,0 +1,45 @@
+@OUTPUT DECORATOR: Data pass from child component to parent component
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+CHILD COMPONENT:
+
+HTML:
+
+<div class="container">
+    <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ENTER THE NAME</label>
+      <br>
+      <input type="email" aria-describedby="emailHelp" width="200px">
+    </div>
+    
+    <button type="submit" (click) ="storename()" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  
+  </div>
+---------------------------------------------------------------------------------------------------
+TYPESCRIPT:
+
+@Output() sendName = new EventEmitter<string>();
+
+storename(){
+  this.sendName.emit('hi afsar');
+}
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+PARENT COMPONENT:
+
+HTML:
+
+<app-child (sendName) = "recName($event)"></app-child>
+{{title}}
+---------------------------------------------------------------------------------------------------
+TYPESCRIPT:
+
+
+recName(value:string){
+    this.title = value;
+  }
+  ---------------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------
