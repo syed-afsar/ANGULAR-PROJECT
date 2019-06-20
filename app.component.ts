@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PostService } from './post.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,5 @@ import { PostService } from './post.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WELCOME http';
-
-  
+  title = 'cstdir';
 }
