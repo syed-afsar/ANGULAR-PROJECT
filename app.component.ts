@@ -6,15 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'STRUCTURE DIRCETIVES';
+  title = 'CUSTOM DIRECTORY - HOSTLISTNER';
+public emplo = [];
+  constructor(private emplo:) { }
 
-  display = true;
-
-  // displays = false;
-
-  // displayss = true;
-
-  // colors = ["red", "blue", "green", "violet"];
-
-  // color = "violet" ;
 }
