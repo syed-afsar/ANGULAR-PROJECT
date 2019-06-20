@@ -3,32 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { TeamComponent } from './team/team.component';
-import { PlayerComponent } from './player/player.component';
-import { RouterModule, Routes } from '@angular/router';
-import { GardService } from './gard.service';
-import { AuthenService } from './authen.service';
-import { ResolveeService } from './resolvee.service';
-
-const rconfg: Routes = [{path:'home',component: HomeComponent},
-                       {path:'team',component: TeamComponent, resolve:{playersdata:ResolveeService}},
-                       {path:'player/:nameof/:source',component: PlayerComponent , canActivate:[GardService]}
-                       ];
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './post.service';
+import { PlayersService } from './players.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    TeamComponent,
-    PlayerComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(rconfg)
+    HttpClientModule,
+    PlayersService 
   ],
-  providers: [ GardService, AuthenService, ResolveeService],
+  providers: [PostService, PlayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
