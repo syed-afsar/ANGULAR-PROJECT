@@ -1,0 +1,78 @@
+ 
+ 
+ 
+ Different types of using ngIf
+  
+  TYPE:1
+  <h1 *ngIf = "true">
+    WELCOPME TO {{ title }}!
+  </h1>
+
+  TYPE:2
+  <h1 *ngIf = "display">
+    WELCOPME TO {{ title }}!
+  </h1>
+
+  TYPE:3
+  <h1 *ngIf = "displays; else elseblock">
+    WELCOPME TO {{ title }}!
+  </h1>
+
+  <ng-template #elseblock>
+   <h1> Name is hidden</h1>
+  </ng-template>
+
+  TYPE:4
+  <div *ngIf = "displayss; then thenblock; else elseblock"></div>
+
+  <ng-template #thenblock>
+    <h1> Name is unhidden</h1>
+  </ng-template>
+
+
+  <ng-template #elseblock>
+    <h1> Name is hidden</h1>
+ 
+   </ng-template>
+
+
+<!-- TYPE 1:
+   <div *ngFor="let color of colors">
+     <h2>{{color}}</h2>
+   </div>
+
+
+   TYPE 2:
+   <div *ngFor="let color of colors; index as i">
+    <h2>{{i}} {{color}}</h2>
+  </div>
+
+  TYPE 3:
+   <div *ngFor="let color of colors; odd as o">
+    <h2>{{o}} {{color}}</h2>
+  </div>
+
+  TYPE 4:
+  <div *ngFor="let color of colors; even as e">
+    <h2>{{e}} {{color}}</h2>
+  </div>
+
+  TYPE 5:
+  <div *ngFor="let color of colors; first as f">
+    <h2>{{f}} {{color}}</h2>
+  </div>
+
+TYPE 6:
+  <div *ngFor="let color of colors; last as l">
+    <h2>{{f}} {{color}}</h2>
+  </div> -->
+
+<!-- <div>
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">you picked red</div>
+    <div *ngSwitchCase="'green'">you picked green</div>
+    <div *ngSwitchCase="'blue'">you picked blue</div>
+    <div *ngSwitchCase="'violet'">you picked violet</div>
+    <div *ngSwitchDefault>picked again</div>
+  </div></div> -->
+<router-outlet></router-outlet>
